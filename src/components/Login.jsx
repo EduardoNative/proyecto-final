@@ -1,21 +1,37 @@
-import {useContext} from "react";
-import { Button } from "react-bootstrap";
-import {useNavigate} from "react-router-dom";
-import { UserContext } from "../App";
-
+import { useContext, useEffect } from "react";
+import { Button, Container, Image, Col} from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import login from "../assets/login.jpg";
 
 export const Login = () => {
-    const context = useContext(UserContext);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const clickEnLogin = () =>{
-        context.loggedIn = true;
-        navigate("/home");
+  useEffect(() => {
+    if (localStorage.getItem("LOGEADO") === true) {
+      navigate("/home")
     }
+  }, []);
+
+
+  const clickEnLogin = () => {
+    localStorage.setItem("LOGEADO", true)
+    navigate("/home");
+  }
 
   return (
-    <div>
-      <Button onClick={clickEnLogin} >login</Button>
-    </div>
+
+    <Container fluid>
+      <Col>
+      <Image className="ImageLogin" src={login} />
+      <div>
+      <Button className="buttonLogin" onClick={clickEnLogin}>INGRESA AQUI</Button>
+      </div>
+    
+      </Col>
+      
+
+    </Container>
+    
+    
   );
 };

@@ -3,9 +3,10 @@ import {Container} from "react-bootstrap";
 export const Historia = () => {
 
     return(
-        <Container>
-            <h2 style={{color: "black"}}>
-
+        <Container className="historia">
+            <h2>
+            <br/>
+            <br/>
             Rick and Morty es una comedia de ciencia ficción animada para adultos estadounidense 
             creada por Justin Roiland y Dan Harmon para el bloque de programación nocturna de Cartoon Network,
             Adult Swim. La serie sigue las desventuras de Rick Sánchez, un cínico científico loco, 

@@ -8,28 +8,34 @@ import { Home } from "./components/Home";
 import { Personajes } from "./components/Personajes";
 import { Historia } from "./components/Historia";
 import { Login } from "./components/Login";
+import WithNav from "./components/WithNav";
+import WithoutNav from "./components/WithoutNav";
+import { Logout } from "./components/Logout";
+import "bootstrap-icons/font/bootstrap-icons.css"
 
-const userObjectContext = { loggedIn: false };
-export const UserContext = createContext(userObjectContext);
+export const LoginContext = createContext();
 
 function App() {
-  const [user] = useState(userObjectContext);
-
   return (
-    <UserContext.Provider value={user}>
-      <BrowserRouter>
-        <div>
-          <NavbarTop></NavbarTop> 
-
-          <Routes>
-            <Route path="/" element={<Login></Login>} />
-            <Route path="/home" element={<Home></Home>} />
-            <Route path="/historia" element={<Historia></Historia>} />
-            <Route path="/personajes" element={<Personajes></Personajes>} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </UserContext.Provider>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<WithoutNav />} >
+          <Route path="/" element={<Login />} />
+        </Route>
+        <Route element={<WithNav />} >
+          <Route path="/home" element={<Home />} />
+        </Route>
+        <Route element={<WithNav />} >
+          <Route path="/historia" element={<Historia />} />
+        </Route>
+        <Route element={<WithNav />} >
+          <Route path="/personajes" element={<Personajes />} />
+        </Route>
+        <Route element={<WithNav />} >
+          <Route path="/logout" element={<Logout />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

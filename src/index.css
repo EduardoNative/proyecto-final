@@ -1,16 +1,42 @@
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h1{
+  filter: drop-shadow(0 0 9px #212121 );
 }
 
 .Image1{
   width: 100%;
   height: 100%;
+  filter: drop-shadow(0 0 20px #212121 );
+
+}
+
+.ColPadre{
+  gap: 5px;
+  display: grid;
+  height: 50%;
+}
+
+.Card{
+  display: block;
+  border-color: transparent;
 }
 
 .CardImg{
-  width: 37%;
+  width: 42%;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 10px #263238 );
+  
+}
+
+.buttonDetallePersonaje{
+  text-align: center;
+  background-color: #000000;
+  filter: drop-shadow(0 0 10px #263238 );
 }
 
 .ModalTitle{
@@ -60,3 +86,49 @@
   cursor: pointer;
 }
 
+.ImageLogin{
+  width: 80%;
+  height: 50%;
+  filter: blur(1px);
+  border-radius: 60px 0;
+  filter: drop-shadow(0 0 50px #212121 );
+
+}
+
+.buttonLogin{
+  width: 50%;
+  height: 100%;
+  background-color: #212121 ;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Arial;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.historia{
+  filter: drop-shadow(0 0 10px #212121 );
+}
+
+.buttonCerrarS{
+  width: 20%;
+  height: 20%;
+  background-color: #212121;
+  border-radius: 50px;
+  
+}
+
+.react2{
+  width: 50%;
+  height: 50%;
+  filter: blur(1px);
+  border-radius: 80px 0;
+  filter: drop-shadow(0 0 80px #212121 );
+}

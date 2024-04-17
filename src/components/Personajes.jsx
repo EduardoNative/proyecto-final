@@ -40,21 +40,19 @@ export const Personajes = () => {
   //aqui va la vista
   return (
     <>
-      <Col>
+      <Col className="ColPadre">
         <h1>PERSONAJES Y NOMBRES</h1>
         <ul>
           {personajes.map((personaje) => (
             <li key={personaje.id}>
-              <Card>
-                <Card.Img
-                  className="CardImg"
-                  variant="top"
+              <Card className="Card">
+                <Card.Img className="CardImg"
                   src={personaje.image}
                 />
                 <Card.Body>
                   <Card.Title> {personaje.name} </Card.Title>
-                  <Button onClick={() => clickEnVerDetalle(personaje.id)}>
-                    Ver Detalles
+                  <Button className="buttonDetallePersonaje" onClick={() => clickEnVerDetalle(personaje.id)}>
+                    Ver mas Detalle del Personaje
                   </Button>
                 </Card.Body>
               </Card>
